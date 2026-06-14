@@ -1,0 +1,446 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+
+  --color-canvas: #ffffff;
+  --color-ink: #191919;
+  --color-muted: #667085;
+  --color-muted-light: #8b95a5;
+  --color-blue: #5e89ed;
+  --color-blue-bright: #4a75d9;
+  --color-blue-light: #8fa3e8;
+  --color-blue-soft: #d8e2f8;
+  --color-blue-muted: #b4c4ef;
+  --color-blue-shell: #f0f3fa;
+  --color-border: #e8eef2;
+  --color-success: #3a8f5d;
+  --color-success-text: #3a8f5d;
+  --color-success-soft: #e9ffdb;
+  --color-orange: #c45a00;
+  --color-orange-soft: #ffdba7;
+  --color-coach: #bf9bde;
+  --color-coach-soft: #d7c3f8;
+  --color-yellow: #f2d147;
+  --color-yellow-soft: #f7f296;
+  --color-pink: #ef6ea5;
+  --color-pink-soft: #f5c2d7;
+  --color-teal: #52c470;
+  --color-teal-soft: #b7edb8;
+  --color-card: #ffffff;
+  --color-dental: #5e89ed;
+  --color-dental-soft: #d8e2f8;
+
+  --color-risk-low: #3a8f5d;
+  --color-risk-low-bg: #e9ffdb;
+  --color-risk-medium: #c45a00;
+  --color-risk-medium-bg: #ffdba7;
+  --color-risk-high: #c45a00;
+  --color-risk-high-bg: #ffdba7;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.015em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/** Inter — screen headings */
+.type-greeting {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.type-display {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.type-h1 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/** Inter — onboarding headlines */
+.type-onboarding-headline {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+/** Inter UI scale */
+.type-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.type-section {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.type-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.type-body-lg {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.type-label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.safe-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.safe-pt {
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+.safe-px {
+  padding-left: max(2rem, env(safe-area-inset-left, 0px));
+  padding-right: max(2rem, env(safe-area-inset-right, 0px));
+}
+
+/** Home — subtle top atmosphere (Ice Blue · Fresh Mint · Moon Tint) */
+.home-atmosphere {
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: -2rem;
+  right: -2rem;
+  height: 12.5rem;
+  background: radial-gradient(
+    circle at top center,
+    rgba(141, 194, 255, 0.14) 0%,
+    rgba(233, 255, 219, 0.08) 35%,
+    rgba(243, 246, 255, 0.05) 55%,
+    rgba(255, 255, 255, 0) 75%
+  );
+}
+
+.glow-blue {
+  box-shadow: 0 8px 40px -8px rgba(94, 137, 237, 0.35);
+}
+
+.glow-mint {
+  box-shadow: 0 8px 40px -8px rgba(82, 196, 112, 0.4);
+}
+
+.mascot-glow-blue {
+  background: radial-gradient(circle, rgba(94, 137, 237, 0.28) 0%, rgba(200, 214, 246, 0.16) 45%, transparent 70%);
+}
+
+.mascot-glow-mint {
+  background: radial-gradient(circle, rgba(82, 196, 112, 0.35) 0%, rgba(94, 137, 237, 0.08) 50%, transparent 70%);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aiOrbPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes aiOrbRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aiOrbShimmer {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+.ai-orb-glow {
+  background: radial-gradient(
+    circle,
+    rgba(94, 137, 237, 0.48) 0%,
+    rgba(153, 236, 191, 0.28) 40%,
+    transparent 70%
+  );
+  filter: blur(8px);
+  animation: aiOrbPulse 3s ease-in-out infinite;
+}
+
+.ai-orb-ring {
+  animation: aiOrbRing 24s linear infinite;
+}
+
+.ai-orb-core {
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(188, 219, 235, 0.85) 35%,
+    rgba(82, 196, 112, 0.5) 70%,
+    rgba(94, 137, 237, 0.35) 100%
+  );
+  filter: blur(6px);
+  animation: aiOrbPulse 2.8s ease-in-out infinite;
+}
+
+.ai-orb-shimmer {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.65) 0%, transparent 70%);
+  animation: aiOrbShimmer 2.2s ease-in-out infinite;
+}
+
+@keyframes scanHeroGlow {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.scan-hero-glow {
+  animation: scanHeroGlow 4s ease-in-out infinite;
+}
+
+@keyframes scanRingPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+@keyframes scanOrbBreathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.94;
+  }
+  50% {
+    transform: scale(1.025);
+    opacity: 1;
+  }
+}
+
+@keyframes scanOrbOrbitSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scanOrbOrbitFast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scanOrbSparkle {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.92) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) rotate(12deg);
+  }
+}
+
+@keyframes scanOrbMist {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translate(-2%, -1%) scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: translate(2%, 1%) scale(1.04);
+  }
+}
+
+.scan-orb-edge-glow {
+  background: radial-gradient(
+    circle,
+    rgba(200, 214, 246, 0.3) 0%,
+    rgba(94, 137, 237, 0.16) 42%,
+    rgba(82, 196, 112, 0.14) 62%,
+    transparent 76%
+  );
+  filter: blur(18px);
+}
+
+.scan-orb--idle .scan-orb-edge-glow {
+  animation: scanOrbBreathe 4.5s ease-in-out infinite;
+}
+
+.scan-orb-ring {
+  border: 1px solid rgba(94, 137, 237, 0.3);
+  box-shadow:
+    0 0 14px rgba(94, 137, 237, 0.1),
+    0 0 0 1px rgba(82, 196, 112, 0.18) inset;
+}
+
+.scan-orb-ring-pulse {
+  border: 1px solid rgba(94, 137, 237, 0.14);
+  animation: scanRingPulse 3s ease-in-out infinite;
+}
+
+.scan-orb--idle .scan-orb-glass {
+  animation: scanOrbBreathe 4.5s ease-in-out infinite;
+}
+
+.scan-orb-glass {
+  box-shadow:
+    inset 0 2px 20px rgba(255, 255, 255, 0.75),
+    inset 0 -6px 16px rgba(200, 214, 246, 0.12),
+    0 10px 32px -12px rgba(94, 137, 237, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.scan-orb-core {
+  background: radial-gradient(
+    circle at 50% 36%,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(200, 214, 246, 0.82) 42%,
+    rgba(216, 226, 248, 0.62) 100%
+  );
+}
+
+.scan-orb-mist {
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 35%, rgba(255, 255, 255, 0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 70% 65%, rgba(255, 255, 255, 0.3) 0%, transparent 65%);
+  animation: scanOrbMist 5s ease-in-out infinite;
+}
+
+.scan-orb-highlight {
+  background: radial-gradient(circle at 38% 28%, rgba(255, 255, 255, 0.5) 0%, transparent 45%);
+}
+
+.scan-orb-orbit-1 {
+  animation: scanOrbOrbitSlow 28s linear infinite;
+}
+
+.scan-orb-orbit-2 {
+  animation: scanOrbOrbitSlow 22s linear infinite reverse;
+}
+
+.scan-orb-orbit-3 {
+  animation: scanOrbOrbitSlow 32s linear infinite;
+}
+
+.scan-orb--processing .scan-orb-orbit-1 {
+  animation: scanOrbOrbitFast 6s linear infinite;
+}
+
+.scan-orb--processing .scan-orb-orbit-2 {
+  animation: scanOrbOrbitFast 5s linear infinite reverse;
+}
+
+.scan-orb--processing .scan-orb-orbit-3 {
+  animation: scanOrbOrbitFast 7s linear infinite;
+}
+
+.scan-orb--processing .scan-orb-glass {
+  animation: none;
+}
+
+.scan-orb-sparkle {
+  animation: scanOrbSparkle 1.8s ease-in-out infinite;
+}
